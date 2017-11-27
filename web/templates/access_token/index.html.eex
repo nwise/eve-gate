@@ -1,0 +1,32 @@
+<h2>Listing access tokens</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Access token</th>
+      <th>Token type</th>
+      <th>Expires in</th>
+      <th>Refresh token</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for access_token <- @access_tokens do %>
+    <tr>
+      <td><%= access_token.access_token %></td>
+      <td><%= access_token.token_type %></td>
+      <td><%= access_token.expires_in %></td>
+      <td><%= access_token.refresh_token %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: access_token_path(@conn, :show, access_token), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: access_token_path(@conn, :edit, access_token), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: access_token_path(@conn, :delete, access_token), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New access token", to: access_token_path(@conn, :new) %>

@@ -1,0 +1,28 @@
+<h2>Show access token</h2>
+
+<ul>
+
+  <li>
+    <strong>Access token:</strong>
+    <%= @access_token.access_token %>
+  </li>
+
+  <li>
+    <strong>Token type:</strong>
+    <%= @access_token.token_type %>
+  </li>
+
+  <li>
+    <strong>Expires in:</strong>
+    <%= @access_token.expires_in %>
+  </li>
+
+  <li>
+    <strong>Refresh token:</strong>
+    <%= @access_token.refresh_token %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: access_token_path(@conn, :edit, @access_token) %>
+<%= link "Back", to: access_token_path(@conn, :index) %>

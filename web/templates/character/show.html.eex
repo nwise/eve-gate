@@ -1,0 +1,8 @@
+<h2>Show character</h2>
+
+<ul>
+
+</ul>
+
+<%= link "Edit", to: character_path(@conn, :edit, @character) %>
+<%= link "Back", to: character_path(@conn, :index) %>
