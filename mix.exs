@@ -30,16 +30,19 @@ defmodule EveGate.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2.1"},
+    [{:phoenix, "~> 1.4.0"},
      {:phoenix_pubsub, "~> 1.0"},
-     {:phoenix_ecto, "~> 3.0"},
+     {:phoenix_ecto, "~> 4.0"},
+     {:ecto_sql, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:httpoison, "~> 0.11.2"},
      {:poison, "~> 3.0", override: true},
-     {:cowboy, "~> 1.0"}]
+     {:plug_cowboy, "~> 2.0"},
+     {:plug, "~>1.7"}
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

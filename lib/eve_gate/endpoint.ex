@@ -1,7 +1,8 @@
 defmodule EveGate.Endpoint do
   use Phoenix.Endpoint, otp_app: :eve_gate
 
-  socket "/socket", EveGate.UserSocket
+  socket "/socket", EveGate.UserSocket,
+    websocket: true
 
   # Serve at "/" the static files from "priv/static" directory.
   #

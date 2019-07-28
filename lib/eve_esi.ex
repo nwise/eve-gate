@@ -1,18 +1,20 @@
+require IEx
 defmodule EveGate.EveEsi do
 
   def token(access_code) do
-    body = Poison.encode!(
+    body = URI.encode_query(
       %{
         grant_type: "authorization_code",
         code: access_code
       })
 
-    {:ok, %{body: json_body}} =
+    {:ok, %{body: body, status_code: status_code}} =
       HTTPoison.post(
-        "https://login.eveonline.com/oauth/token",
+        "https://login.eveonline.com/v2/oauth/token",
         body,
         headers())
-    {:ok, json_body}
+    IEx.pry
+    {:ok, body}
   end
 
   def verify() do
@@ -21,7 +23,11 @@ defmodule EveGate.EveEsi do
   end
 
   defp headers() do
-    [{"Authorization", auth_header()},{"Content-Type", "application/json"}]
+    [
+      {"Authorization", "Basic #{auth_header()}"},
+      {"Content-Type", "application/x-www-form-urlencoded"},
+      {"Host", "login.eveonline.com"}
+    ]
   end
 
   defp auth_header do

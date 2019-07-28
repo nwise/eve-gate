@@ -1,6 +1,6 @@
 <div class="row marketing">
-  <div class="col-lg-6">
-    <a href="https://login.eveonline.com/oauth/authorize/?response_type=code&redirect_uri=http://localhost:4000/access-token/create&client_id=a5d0d4776a12419ea4e11d7c53074065&scope=characterWalletRead&state=uniquestate123"><img src="images/EVE_SSO_Login_Buttons_Large_White.png"></a> 
+    <div class="col-lg-6">
+        <a href="https://login.eveonline.com/oauth/authorize/?response_type=code&redirect_uri=http://localhost:4000/access-token/create&client_id=a5d0d4776a12419ea4e11d7c53074065&scope=esi-wallet.read_character_wallet.v1&state=uniquestate123"><img src="images/EVE_SSO_Login_Buttons_Large_White.png"></a> 
   </div>
 
   <div class="col-lg-6">
