@@ -10,10 +10,10 @@ defmodule EveGate.EveEsi do
 
     {:ok, %{body: body, status_code: status_code}} =
       HTTPoison.post(
-        "https://login.eveonline.com/v2/oauth/token",
+        "https://login.eveonline.com/oauth/token?",
         body,
         headers())
-    IEx.pry
+
     {:ok, body}
   end
 
@@ -22,7 +22,7 @@ defmodule EveGate.EveEsi do
     {:ok, json_body}
   end
 
-  defp headers() do
+  def headers() do
     [
       {"Authorization", "Basic #{auth_header()}"},
       {"Content-Type", "application/x-www-form-urlencoded"},
@@ -30,7 +30,7 @@ defmodule EveGate.EveEsi do
     ]
   end
 
-  defp auth_header do
+  def auth_header do
     client_id = "a5d0d4776a12419ea4e11d7c53074065"
     secret_key = "3oy9U1aTf3IsbtFIGTlSctb1EZwf41M7gxH5d9aO"
     auth = Base.encode64("#{client_id}:#{secret_key}")

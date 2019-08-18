@@ -37,7 +37,7 @@ config :phoenix, :stacktrace_depth, 20
 config :eve_gate, EveGate.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "",
+  password: "postgres",
   database: "eve_gate_dev",
   hostname: "localhost",
   pool_size: 10
