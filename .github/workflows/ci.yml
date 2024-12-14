@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
 
 jobs:
   scan_ruby:
@@ -96,4 +96,4 @@ jobs:
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
